@@ -1,0 +1,10 @@
+body{
+  background: url("/images/North.jpg")no-repeat center center fixed;
+  background-size: cover;
+}
+
+.navbar{
+  background-color: transparent;
+  border-color: transparent;
+
+}

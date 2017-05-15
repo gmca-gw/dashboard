@@ -8,6 +8,7 @@ app.controller("FirstCtrl", ($scope) => {
 app.controller("SideCtrl", ($scope) => {
     $scope.name = "Sidebar";
 
+    $scope.jobs = [];
     /* set up XMLHttpRequest to Parse EXCEL spreadsheet */
     var url = "db/Book1.xlsx";
     var oReq = new XMLHttpRequest();
@@ -27,7 +28,10 @@ app.controller("SideCtrl", ($scope) => {
       var workbook = XLSX.read(bstr, {type:"binary"});
 
       /* DO SOMETHING WITH workbook HERE */
+      let jobs = workbook;
       console.log(workbook);
+      // $scope.jobs.push(jobs);
+      // console.log($scope.jobs[0]);
     }
 
     oReq.send();

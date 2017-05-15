@@ -1,5 +1,5 @@
 body{
-  background: url("/images/North.jpg")no-repeat center center fixed;
+  background: url(/images/North.jpg)no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -7,4 +7,27 @@ body{
   background-color: transparent;
   border-color: transparent;
 
+}
+
+.main-box{
+  width: 90%;
+}
+
+.main-box h1{
+  text-align: center;
+  font-family: calibri;
+  width: 100%;
+  margin: 4% 0px;
+}
+
+.content-box{
+  background-color: rgba(10, 10, 10, 0.53);
+  height:500px;
+  color: white;
+}
+
+.sidebar{
+  background-color: rgba(10, 10, 10, 0.53);
+  height:500px;
+  color: white;
 }

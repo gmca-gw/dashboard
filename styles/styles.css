@@ -34,11 +34,13 @@ body{
 }
 
 .sub-nav a, .sub-nav-side a{
-  padding: 10px 60px;
+  padding: 10px 6%;
+  color: black;
 }
 
 .sub-nav a:hover, .sub-nav a:active, .sub-nav-side a:hover a:active{
   background-color: rgba(10, 10, 10, 0.53);
+  text-decoration: none;
 }
 
 .sidebar{

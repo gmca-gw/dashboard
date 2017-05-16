@@ -45,52 +45,55 @@
     <!-- /.container-fluid -->
   </nav>
 
-<div class="container main-box">
-  <h1 id="time"></h1>
-  <div class="row top">
+  <div class="container main-box">
+    <h1 id="time"></h1>
+    <div class="row top">
 
-    <div ng-controller="FirstCtrl" class="col-md-7">
-      <div class="sub-nav">
-        <a href="#">Test</a>
-        <a href="#">How-To</a>
-        <a href="#">Test</a>
-        <a href="#">Test</a>
-        <a href="#">Test</a>
+      <div ng-controller="FirstCtrl" class="col-md-7">
+        <div class="sub-nav">
+          <a href="#">Test</a>
+          <a href="#">How-To</a>
+          <a href="#">Test</a>
+          <a href="#">Test</a>
+          <a href="#">Test</a>
+        </div>
+        <div class="content-box">
+          <div ng-repeat="letter in items">
+            <p>{{letter.name}}</p>
+            <a href={{letter.pdf}}>How-To</a>
+          </div>
+        </div>
       </div>
-      <div class="content-box">
-        <div ng-repeat="letter in items">
-          <p>{{letter.name}}</p>
-          <a href={{letter.pdf}}>How-To</a>
+
+      <div ng-controller="SideCtrl" class="col-md-3 col-md-offset-1">
+        <div class="sub-nav-side">
+          <a>Office</a>
+          <a>Master List</a>
+          <a>List</a>
+        </div>
+        <div class="sidebar">
+          <div ng-repeat="project in master">
+            <p>{{project.name}}</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div ng-controller="SideCtrl" class="col-md-3 col-md-offset-1">
-      <div class="sub-nav-side">
-        <a>Test</a>
-        <a>Test</a>
-        <a>Test</a>
+    <div class="row bottom">
+      <div class="col-md-7 left">
+        <a class="twitter-grid" data-limit="3" data-partner="tweetdeck" href="https://twitter.com/gilmcarchitects/timelines/864486735329333248">Widget</a>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
-      <div class="sidebar">
-        <p>{{name}}</p>
-      </div>
-    </div>
-  </div>
 
-  <div class="row bottom">
-    <div class="col-md-7 left">
-      <a class="twitter-grid" data-limit="3" data-partner="tweetdeck" href="https://twitter.com/gilmcarchitects/timelines/864486735329333248">Widget</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-
-    <!-- <div class="col-md-4 center">
+      <!-- <div class="col-md-4 center">
       <h1>Center</h1>
     </div> -->
 
-    <div class="col-md-5 right">
-      <!-- <a class="twitter-timeline" data-width="500" data-height="600" href="https://twitter.com/ArchDaily">Tweets by ArchDaily</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+      <div class="col-md-5 right">
+        <!-- <a class="twitter-timeline" data-width="500" data-height="600" href="https://twitter.com/ArchDaily">Tweets by ArchDaily</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+      </div>
     </div>
   </div>
-</div>
 
 
   <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>

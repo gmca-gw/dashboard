@@ -26,8 +26,31 @@ body{
   color: white;
 }
 
+.sub-nav, .sub-nav-side{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.sub-nav a, .sub-nav-side a{
+  padding: 10px 60px;
+}
+
+.sub-nav a:hover, .sub-nav a:active, .sub-nav-side a:hover a:active{
+  background-color: rgba(10, 10, 10, 0.53);
+}
+
 .sidebar{
   background-color: rgba(10, 10, 10, 0.53);
   height:500px;
   color: white;
+}
+
+.left, .right{
+  margin-top: 4%;
+}
+
+.twitter-grid{
+  width: 400px;
 }

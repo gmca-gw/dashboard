@@ -13,46 +13,48 @@ app.controller("SideCtrl", ($http, $q, $scope) => {
   $scope.jobs = [];
   $scope.master;
 
-  console.log($scope.name);
+  //console.log($scope.name);
 
-  const load = () => {
-    return new $q((resolve, reject) => {
-      $http({
-          method: 'GET',
-          url: 'db/list/PROJECTLIST master.xls.xlsx',
-          responseType: "arraybuffer",
-        })
-        .then((response) => {
+  // const load = () => {
+  //   return new $q((resolve, reject) => {
+  //     $http({
+  //         method: 'GET',
+  //         url: 'db/list/PROJECTLIST master.xls.xlsx',
+  //         responseType: "arraybuffer",
+  //       })
+  //       .then((response) => {
+  //
+  //         var arraybuffer = response;
+  //
+  //         /* convert data to binary string */
+  //         var data = new Uint8Array(arraybuffer);
+  //         var arr = new Array();
+  //         for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+  //         var bstr = arr.join("");
+  //
+  //         /* Call XLSX */
+  //         var workbook = XLSX.read(bstr, {
+  //           type: "binary"
+  //         });
+  //
+  //         console.log("test", workbook);
+  //
+  //         /* DO SOMETHING WITH workbook HERE */
+  //         let myArray = workbook.Sheets["Master Project List"];
+  //         console.log(myArray);
+  //
+  //
+  //
+  //         resolve(myArray);
+  //       }).catch((error) => {
+  //         reject(error);
+  //       });
+  //   });
+  // }
+  //
+  // load();
 
-          var arraybuffer = response;
-
-          /* convert data to binary string */
-          var data = new Uint8Array(arraybuffer);
-          var arr = new Array();
-          for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-          var bstr = arr.join("");
-
-          /* Call XLSX */
-          var workbook = XLSX.read(bstr, {
-            type: "binary"
-          });
-
-          console.log("test", workbook);
-
-          /* DO SOMETHING WITH workbook HERE */
-          let myArray = workbook.Sheets["Master Project List"];
-          console.log(myArray);
-
-
-
-          resolve(myArray);
-        }).catch((error) => {
-          reject(error);
-        });
-    });
-  }
-
-  load();
+// ---------------------------------------------------------
 
   // const yay = () => {
   //   return new $q((resolve, reject) => {
@@ -141,93 +143,92 @@ app.controller("SideCtrl", ($http, $q, $scope) => {
   // console.log($scope.master.$$state);
 
 
-  // const returnMaster = (array) => {
-  //   //console.log(array);
-  //   let list = array;
-  //   return $scope.master = list;
-  // };
+  const returnMaster = (array) => {
+    //console.log(array);
+    let list = array;
+    return $scope.master = list;
+  };
   // -------------------------------------
-  // const getList = function() {
-  //   /* set up XMLHttpRequest to Parse EXCEL spreadsheet */
-  //   var url = "db/list/PROJECTLIST master.xls.xlsx";
-  //   var oReq = new XMLHttpRequest();
-  //   oReq.open("GET", url, true);
-  //   oReq.responseType = "arraybuffer";
-  //
-  //   oReq.onload = function(e) {
-  //     var arraybuffer = oReq.response;
-  //
-  //     /* convert data to binary string */
-  //     var data = new Uint8Array(arraybuffer);
-  //     var arr = new Array();
-  //     for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-  //     var bstr = arr.join("");
-  //
-  //     /* Call XLSX */
-  //     var workbook = XLSX.read(bstr, {
-  //       type: "binary"
-  //     });
-  //
-  //     console.log(workbook);
-  //     /* DO SOMETHING WITH workbook HERE */
-  //     let jobs = workbook.Sheets["Master Project List"];
-  //     //console.log(workbook,jobs);
-  //
-  //     var sheet2arr = function(sheet) {
-  //       var result = [];
-  //       var row;
-  //       var rowNum;
-  //       var colNum;
-  //       var range = XLSX.utils.decode_range(sheet['!ref']);
-  //       for (rowNum = range.s.r; rowNum <= range.e.r; rowNum++) {
-  //         row = [];
-  //         for (colNum = range.s.c; colNum <= range.e.c; colNum++) {
-  //           var nextCell = sheet[
-  //             XLSX.utils.encode_cell({
-  //               r: rowNum,
-  //               c: colNum
-  //             })
-  //           ];
-  //           if (typeof nextCell === 'undefined') {
-  //             row.push(void 0);
-  //           } else row.push(nextCell.w);
-  //         }
-  //         result.push(row);
-  //       }
-  //       return result;
-  //     };
-  //
-  //     let arrToSlice = sheet2arr(jobs);
-  //     let newList = arrToSlice.slice(5, 700);
-  //     let arrayList = [];
-  //     let jobObj = {};
-  //
-  //     newList.forEach(function(job) {
-  //       jobObj.name = job[0];
-  //       jobObj.code = job[1];
-  //       jobObj.number = job[2];
-  //       jobObj.phase = job[3];
-  //       arrayList.push(jobObj);
-  //       arrayList.reverse();
-  //     });
-  //
-  //     //console.log(arrayList);
-  //
-  //     $scope.$apply(function(arrayList) {
-  //           $scope.master = arrayList;
-  //           console.log("test", $scope);
-  //       });
-  //
-  //
-  //     //$scope.master = arrayList;
-  //     //returnMaster(arrayList);
-  //
-  //   }
-  //   oReq.send();
-  //   //console.log(arrayList);
-  // };
-  //
-  // getList();
+  const getList = function() {
+    /* set up XMLHttpRequest to Parse EXCEL spreadsheet */
+    var url = "db/list/PROJECTLIST master.xls.xlsx";
+    var oReq = new XMLHttpRequest();
+    oReq.open("GET", url, true);
+    oReq.responseType = "arraybuffer";
 
+    oReq.onload = function(e) {
+      var arraybuffer = oReq.response;
+
+      /* convert data to binary string */
+      var data = new Uint8Array(arraybuffer);
+      var arr = new Array();
+      for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
+      var bstr = arr.join("");
+
+      /* Call XLSX */
+      var workbook = XLSX.read(bstr, {
+        type: "binary"
+      });
+
+      //console.log(workbook);
+      /* DO SOMETHING WITH workbook HERE */
+      let jobs = workbook.Sheets["Master Project List"];
+      //console.log(workbook,jobs);
+
+      var sheet2arr = function(sheet) {
+        var result = [];
+        var row;
+        var rowNum;
+        var colNum;
+        var range = XLSX.utils.decode_range(sheet['!ref']);
+        for (rowNum = range.s.r; rowNum <= range.e.r; rowNum++) {
+          row = [];
+          for (colNum = range.s.c; colNum <= range.e.c; colNum++) {
+            var nextCell = sheet[
+              XLSX.utils.encode_cell({
+                r: rowNum,
+                c: colNum
+              })
+            ];
+            if (typeof nextCell === 'undefined') {
+              row.push(void 0);
+            } else row.push(nextCell.w);
+          }
+          result.push(row);
+        }
+        return result;
+      };
+
+      let arrToSlice = sheet2arr(jobs);
+      let newList = arrToSlice.slice(5, 700);
+      let arrayList = [];
+
+
+      newList.forEach(function(job) {
+        let jobObj = {};
+        jobObj.name = job[0];
+        jobObj.code = job[1];
+        jobObj.number = job[2];
+        jobObj.phase = job[3];
+        arrayList.push(jobObj);
+      });
+
+        arrayList.reverse();
+        console.log(arrayList);
+
+      //console.log(arrayList);
+
+      // $scope.$apply(function(arrayList) {
+      //       $scope.master = arrayList;
+      //       console.log("test", $scope);
+      //   });
+
+      //$scope.master = arrayList;
+      returnMaster(arrayList);
+    }
+    oReq.send();
+    //console.log(arrayList);
+  };
+  getList();
 
 });

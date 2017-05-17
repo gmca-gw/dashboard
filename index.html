@@ -68,12 +68,12 @@
       <div ng-controller="SideCtrl" class="col-md-3 col-md-offset-1">
         <div class="sub-nav-side">
           <a>Office</a>
-          <a>Master List</a>
+          <a>{{name}}</a>
           <a>List</a>
         </div>
         <div class="sidebar">
-          <div ng-repeat="project in master">
-            <p>{{project.name}}</p>
+          <div> <!--Repeat-->
+            <p></p>
           </div>
         </div>
       </div>
@@ -99,8 +99,10 @@
   <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="lib/bower_components/moment/min/moment.min.js"></script>
-  <script src="lib/bower_components/js-xlsx/dist/xlsx.full.min.js"></script>
   <script src="lib/bower_components/angular/angular.min.js"></script>
+  <script src="lib/bower_components/js-xlsx/dist/xlsx.full.min.js"></script>
+  <script src="lib/node_modules/angular-js-xlsx/angular-js-xlsx.js"></script>
+
   <script src="javascript/controllers.js"></script>
   <script src="javascript/main.js"></script>
 </body>

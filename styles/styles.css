@@ -47,6 +47,12 @@ body{
   background-color: rgba(10, 10, 10, 0.53);
   height:500px;
   color: white;
+  overflow: auto;
+  
+}
+
+.jobsBox{
+
 }
 
 .left, .right{

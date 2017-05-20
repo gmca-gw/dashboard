@@ -11,7 +11,7 @@ app.controller("FirstCtrl", ($scope) => {
 app.controller("SideCtrl", ($http, $q, $scope) => {
   $scope.name = "Sidebar";
   $scope.jobs = [];
-  $scope.master;
+  $scope.master = [];
 
   //console.log($scope.name);
 
@@ -146,12 +146,15 @@ app.controller("SideCtrl", ($http, $q, $scope) => {
   const returnMaster = (array) => {
     //console.log(array);
     let list = array;
-    return $scope.master = list;
+    
+    $scope.$apply(() => {
+      $scope.master = list;  
+    });
   };
   // -------------------------------------
   const getList = function() {
     /* set up XMLHttpRequest to Parse EXCEL spreadsheet */
-    var url = "db/list/PROJECTLIST master.xls.xlsx";
+    var url = "db/PROJECTLIST master.xls.xlsx";
     var oReq = new XMLHttpRequest();
     oReq.open("GET", url, true);
     oReq.responseType = "arraybuffer";

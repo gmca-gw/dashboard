@@ -71,9 +71,11 @@
           <a>{{name}}</a>
           <a>List</a>
         </div>
+
         <div class="sidebar">
-          <div> <!--Repeat-->
-            <p></p>
+        <input ng-model="searchText" type="text" name="searchText" placeholder="Search for Project">
+          <div class ="jobsBox" ng-repeat="job in master | filter: searchText"> <!--Repeat-->
+            <p>{{job.name}},{{job.number}}</p>
           </div>
         </div>
       </div>

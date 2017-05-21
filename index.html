@@ -73,9 +73,16 @@
         </div>
 
         <div class="sidebar">
-        <input ng-model="searchText" type="text" name="searchText" placeholder="Search for Project">
-          <div class ="jobsBox" ng-repeat="job in master | filter: searchText"> <!--Repeat-->
-            <p>{{job.name}},{{job.number}}</p>
+        <input class="searchText form-control" ng-model="searchText" type="text" name="searchText" placeholder="Search projects">
+          <div class="scrollBox table-responsive">
+            <table class="table jobsBox"> <!--Repeat-->
+              <tr ng-repeat="job in master | filter: searchText">
+                <td>{{job.name}}</td>
+                <td>{{job.code}}</td>
+                <td>{{job.number}}</td>
+                <td>{{job.phase}}</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>

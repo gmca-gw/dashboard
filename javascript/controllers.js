@@ -9,7 +9,7 @@ app.controller("FirstCtrl", ($scope) => {
 });
 
 app.controller("SideCtrl", ($http, $q, $scope) => {
-    $scope.name = "Sidebar";
+    $scope.name = "Master List";
     $scope.jobs = [];
     $scope.master = [];
 

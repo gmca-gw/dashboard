@@ -5,7 +5,6 @@ app.controller("FirstCtrl", ($scope) => {
         name: 'Main Content Area',
         pdf: "pdf/ChristieCookie.pdf"
     }];
-
 });
 
 app.controller("SideCtrl", ($http, $q, $scope) => {
@@ -84,7 +83,6 @@ app.controller("SideCtrl", ($http, $q, $scope) => {
             });
 
             arrayList.reverse();
-            console.log(arrayList);
 
             returnMaster(arrayList);
         }

@@ -18,6 +18,7 @@
     "jquery": "^3.2.1",
     "bootstrap": "^3.3.7",
     "moment": "^2.18.1",
-    "angular": "^1.6.4"
+    "angular": "^1.6.4",
+    "js-xlsx": "^0.10.3"
   }
 }

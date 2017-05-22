@@ -51,11 +51,11 @@
 
       <div ng-controller="FirstCtrl" class="col-md-7">
         <div class="sub-nav">
-          <a href="#">Test</a>
+          <a href="#">Item</a>
           <a href="#">How-To</a>
-          <a href="#">Test</a>
-          <a href="#">Test</a>
-          <a href="#">Test</a>
+          <a href="#">Item</a>
+          <a href="#">Item</a>
+          <a href="#">Item</a>
         </div>
         <div class="content-box">
           <div ng-repeat="letter in items">
@@ -65,15 +65,24 @@
         </div>
       </div>
 
-      <div ng-controller="SideCtrl" class="col-md-3 col-md-offset-1">
+      <div ng-controller="SideCtrl" class="col-md-4 col-md-offset-1">
         <div class="sub-nav-side">
           <a>Office</a>
           <a>{{name}}</a>
           <a>List</a>
         </div>
+
         <div class="sidebar">
-          <div> <!--Repeat-->
-            <p></p>
+        <input class="searchText form-control" ng-model="searchText" type="text" name="searchText" placeholder="Search projects">
+          <div class="scrollBox table-responsive">
+            <table class="table jobsBox"> <!--Repeat-->
+              <tr ng-repeat="job in master | filter: searchText">
+                <td>{{job.name}}</td>
+                <td>{{job.code}}</td>
+                <td>{{job.number}}</td>
+                <td>{{job.phase}}</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
@@ -89,7 +98,7 @@
       <h1>Center</h1>
     </div> -->
 
-      <div class="col-md-5 right">
+      <div class="col-md-4 col-md-offset-1 right">
         <!-- <a class="twitter-timeline" data-width="500" data-height="600" href="https://twitter.com/ArchDaily">Tweets by ArchDaily</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
       </div>
     </div>

@@ -2,7 +2,7 @@ let datetime = null,
   date = null;
 
 const update = function() {
-  date = moment(new Date())
+  date = moment(new Date());
   datetime.html(date.format('dddd, MMMM Do YYYY, h:mm a'));
 };
 

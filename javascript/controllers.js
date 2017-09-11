@@ -22,7 +22,7 @@ app.controller("SideCtrl", ($http, $q, $scope) => {
     // -------------------------------------
     const getList = function() {
         /* set up XMLHttpRequest to Parse EXCEL spreadsheet */
-        var url = "db/PROJECTLIST master.xls.xlsx";
+        var url = "db/dPROJECTLIST master.xlsx";
         var oReq = new XMLHttpRequest();
         oReq.open("GET", url, true);
         oReq.responseType = "arraybuffer";
@@ -69,7 +69,7 @@ app.controller("SideCtrl", ($http, $q, $scope) => {
             };
 
             let arrToSlice = sheet2arr(jobs);
-            let newList = arrToSlice.slice(5, 700);
+            let newList = arrToSlice.slice(5, 715);
             let arrayList = [];
 
             // Turn the nested array data into objects
@@ -85,7 +85,7 @@ app.controller("SideCtrl", ($http, $q, $scope) => {
             arrayList.reverse();
 
             returnMaster(arrayList);
-        }
+        };
         oReq.send();
     };
     getList();

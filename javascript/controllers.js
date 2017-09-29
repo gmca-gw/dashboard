@@ -5,6 +5,11 @@ app.controller("FirstCtrl", ($scope) => {
         name: 'Main Content Area',
         pdf: "pdf/ChristieCookie.pdf"
     }];
+
+    let vm = this;
+
+    vm.test = "Controller As Test";
+    console.log(vm.test);
 });
 
 app.controller("SideCtrl", ($http, $q, $scope) => {
@@ -22,7 +27,7 @@ app.controller("SideCtrl", ($http, $q, $scope) => {
     // -------------------------------------
     const getList = function() {
         /* set up XMLHttpRequest to Parse EXCEL spreadsheet */
-        var url = "db/dPROJECTLIST master.xlsx";
+        var url = "db/PROJECTLIST master.xlsx";
         var oReq = new XMLHttpRequest();
         oReq.open("GET", url, true);
         oReq.responseType = "arraybuffer";

@@ -6,6 +6,8 @@
   <title>GilMC</title>
   <link rel="stylesheet" type="text/css" href="lib/bower_components/bootstrap/dist/css/bootstrap.min.css"></link>
   <link rel="stylesheet" type="text/css" href="styles/styles.css"></link>
+  <style>
+  </style>
 </head>
 
 <body ng-app="Dashboard">
@@ -49,7 +51,7 @@
     <h1 id="time"></h1>
     <div class="row top">
 
-      <div ng-controller="FirstCtrl" class="col-md-7">
+      <div ng-controller="FirstCtrl as fc" class="col-md-7">
         <div class="sub-nav">
           <a href="#">Home</a>
           <a href="#">How To</a>
@@ -62,6 +64,9 @@
             <p>{{letter.name}}</p>
             <a href={{letter.pdf}}>How-To</a>
           </div>
+
+          <p>{{fc.test}}</p>
+
         </div>
       </div>
 
@@ -111,7 +116,6 @@
   <script src="lib/bower_components/angular/angular.min.js"></script>
   <script src="lib/bower_components/js-xlsx/dist/xlsx.full.min.js"></script>
   <script src="lib/node_modules/angular-js-xlsx/angular-js-xlsx.js"></script>
-
   <script src="javascript/controllers.js"></script>
   <script src="javascript/main.js"></script>
 </body>
